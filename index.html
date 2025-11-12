@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Test de flexibilité réactive — Clavier + Série complète (FR)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="title" id="blockTitle">Test de flexibilité réactive — Clavier + Série complète (FR)</div>
+      <div class="muted" id="progressTxt"></div>
+    </div>
 
+    <div id="consigneCard" class="card consigne">
+      <div id="consigneHtml"></div>
+      <div class="btns">
+        <button id="startBtn">Commencer le bloc</button>
+        <button id="skipBtn" class="ghost">Passer au bloc suivant</button>
+      </div>
+      <p class="small">Réponses au clavier : appuyez sur les touches <b>1</b> ou <b>2</b>.</p>
+    </div>
+
+    <div id="stimCard" class="stim-area" style="display:none;">
+      <div class="beep-flash" id="beepFlash">🔔 Bip</div>
+      <div class="series" id="seriesRow"></div>
+      <div class="legend" id="legendTxt">Utilisez le clavier : 1 ou 2</div>
+
+      <!-- Example overlay -->
+      <div id="exampleOverlay" class="example-overlay">
+        <div class="example-badge" id="exampleBadge">EXEMPLE – Phase</div>
+        <div class="example-stim" id="exampleStim">Appuyez sur <b>1</b> ou <b>2</b> selon la règle affichée ci-dessous.</div>
+        <div class="example-map" id="exampleMap">Règle: identique — si vous voyez 1, appuyez sur 1, etc.</div>
+        <div class="example-note" id="exampleNote">
+          L’exemple se répète automatiquement en surlignant l’élément courant. Quand vous êtes prêt(e), appuyez sur <i>Commencer</i>.
+        </div>
+        <button id="exampleContinue" class="example-btn">Commencer</button>
+      </div>
+    </div>
+
+    <div class="footer" id="endPanel" style="display:none;">
+      <div class="card">
+        <h3>Résumé</h3>
+        <p id="summaryTxt"></p>
+        <div class="btns">
+          <button id="dlSeqCsvBtn" class="secondary">Télécharger le tableau (CSV)</button>
+          <button id="restartBtn" class="ghost">Recommencer</button>
+        </div>
+        <div id="oneTable"></div>
+        <p class="small">Table par bloc : erreurs, suite réponses (participant, erreurs en rouge), suite correcte, temps total (s).</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
